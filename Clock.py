@@ -15,6 +15,7 @@ class Game:
         self.height = h
         self.center = (self.width / 2, self.height / 2)
         self.screen = pygame.display.set_mode((w, h))
+        pygame.display.set_caption("Clock! ")
         self.font = pygame.font.SysFont(None, 24)
         self.running = True
 
@@ -30,6 +31,8 @@ class Game:
         s = dt.datetime.now().second
         m = dt.datetime.now().minute + s / 60
         h = dt.datetime.now().hour + m / 60
+
+        pygame.display.set_caption("Clock! "+str(dt.datetime.now()))
 
         hour_scale = 12
         minute_scale = 60
